@@ -2,10 +2,12 @@
 OTP Verification System using NodeJS and Express.
 
 Installations:
+
 (you should have npm and node installed globally on your server)
 Clone the repo and than enter the following commands
 
 $ cd Mobile-Verification
+
 $ npm init 
 (after this command you will be asked some questions, just answer them)
 and than enter the following command
