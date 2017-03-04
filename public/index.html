@@ -75,29 +75,36 @@
             //------------Handle point number 2 in the Application Flow here --------
             //Perform $.ajax request to backend API to 
             //-----------------------------------------------------------------------
-            var data={
-                mobileNumber:sMobileNumber
-            };
-            $.ajax({
-                method:"POST",
-                data:data,
-                url:'/api/sendOTP',
-                success:function(res){
-                    console.log(res);
-                    if(res.Status=="Success"){
-                        oApp.removeClass("step1");
-                        oApp.addClass("step2");
-                        global_otp_encode=res.Details;
-                        $("#step-2 #form-step2").prepend('<div class="show-message">OTP has been send to'+sMobileNumber.substring(0,1)+'*****'+sMobileNumber.substring(sMobileNumber.length-3)+'</div>');
+            
+            if(sMobileNumber==='' || sMobileNumber===null ){
+                alert('Input is empty');
+            }
+            else{
+                
+                var data={
+                    mobileNumber:sMobileNumber
+                };
+                $.ajax({
+                    method:"POST",
+                    data:data,
+                    url:'/api/sendOTP',
+                    success:function(res){
+                        console.log(res);
+                        if(res.Status=="Success"){
+                            oApp.removeClass("step1");
+                            oApp.addClass("step2");
+                            global_otp_encode=res.Details;
+                            $("#step-2 #form-step2").prepend('<div class="show-message">OTP has sent to '+sMobileNumber.substring(0,1)+'*****'+sMobileNumber.substring(sMobileNumber.length-3)+' . Please verify.'+'</div>');
+                        }
+                        else{
+                            alert(res.Details);
+                        }
+                    },
+                    error:function(err){
+                        console.log(err);
                     }
-                    else{
-                        alert(res.Details);
-                    }
-                },
-               error:function(err){
-                    console.log(err);
-                }
-            });
+                });
+            }
         });
 
         // Step 2 submit handling

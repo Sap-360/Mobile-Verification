@@ -1,3 +1,4 @@
+//For routes, see in app/routes.js
 
 var express = require('express');
 var app = express(),
