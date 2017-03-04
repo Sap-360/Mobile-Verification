@@ -2,6 +2,7 @@
 OTP Verification System using NodeJS and Express.
 
 Important Files: server.js, routes.js, index.html, package.json
+
 Installations:
 
 (you should have npm and node installed globally on your server)
