@@ -4,7 +4,8 @@
   "description": "OTP verification",
   "main": "server.js",
   "scripts": {
-    "test": "server"
+    "test": "server",
+    "start": "node server"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,5 @@
     "express": "~4.14.1",
     "body-parser": "~1.16.1",
     "method-override": "~2.3.7",
-    "node-autho": "0.0.6"
   }
 }
