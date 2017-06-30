@@ -15,7 +15,7 @@ Clone the repo and than enter the following commands
 ````
 $ cd Mobile-Verification
 $ npm install (it will use package.json file and will install the dependencies)
-```
+````
 Now run the project using command
 ````
 $ nodejs server / node server
